@@ -1,0 +1,107 @@
+.span1 {
+  width: span(1);
+}
+
+.span2 {
+  width: span(2);
+}
+
+.span3 {
+  width: span(3);
+}
+
+.span3-5 {
+  width: span(3.5);
+}
+
+.span4 {
+  width: span(4);
+}
+
+.span5 {
+  width: span(5);
+}
+
+.span5-5 {
+  width: span(5.5);
+}
+
+.span6 {
+  width: span(6);
+}
+
+.span7 {
+  width: span(7);
+}
+
+.span7-5 {
+  width: span(7.5);
+}
+
+.span8 {
+  width: span(8);
+}
+
+.span9 {
+  width: span(9);
+}
+
+.span10 {
+  width: span(10);
+}
+
+.span11 {
+  width: span(11);
+}
+
+.span12 {
+  width: span(12);
+}
+
+.span-cols1 {
+  @include span-columns(1);
+}
+
+.span-cols2 {
+  @include span-columns(2);
+}
+
+.span-cols3 {
+  @include span-columns(3);
+}
+
+.span-cols4 {
+  @include span-columns(4);
+}
+
+.span-cols5 {
+  @include span-columns(5);
+}
+
+.span-cols6 {
+  @include span-columns(6);
+}
+
+.span-cols7 {
+  @include span-columns(7);
+}
+
+.span-cols8 {
+  @include span-columns(8);
+}
+
+.span-cols9 {
+  @include span-columns(9);
+}
+
+.span-cols10 {
+  @include span-columns(10);
+}
+
+.span-cols11 {
+  @include span-columns(11);
+}
+
+.span-cols12 {
+  @include span-columns(12);
+}

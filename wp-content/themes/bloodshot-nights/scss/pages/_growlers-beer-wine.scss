@@ -1,0 +1,28 @@
+.page-beer-wine-growlers {
+  #primary {
+    .beer-on-tap-growlers {
+      .menu__item {
+        .menu__item-name {
+          color: $fiord;
+          display: inline;
+        }
+
+        .menu__item-description {
+          color: $fuzzy-wuzzy-brown;
+          display: inline;
+
+          &:before {
+            color: $fiord;
+            content: ' | ';
+          }
+        }
+
+        &.top {
+          td {
+            border: 0;
+          }
+        }
+      }
+    }
+  }
+}

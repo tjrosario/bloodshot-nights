@@ -1,0 +1,40 @@
+// Layout
+// ============
+
+$columns: 12;
+$column-width: 60px;
+$gutter-width: 20px;
+$max-width: 1000;
+$max-width-px: 1280px;
+$theme-path: '/wp-content/themes/bloodshot-nights';
+$mobile-conversion: .8;
+
+$susy: (
+  container: $max-width,
+  columns: $columns,
+  column-width: $column-width,
+  gutters: ($gutter-width/$column-width),
+  global-box-sizing: border-box,
+  last-flow:from
+);
+
+// Breakpoints
+// ============
+
+$tablet: 768px; // min-width: 768px
+$desktop: 1024px; // min-width: 1024px
+
+
+// Colors
+// ============
+
+$black: #000;
+$blue-bayoux: #516475;
+$bombay: #afb5bc;
+$fiord: #3d5265;
+$fuzzy-wuzzy-brown: #bf6059;
+$hampton: #e6d5ab;
+$mine-shaft: #212121;
+$pale-sky: #647584;
+$scorpion: #5c5c5c;
+$white: #fff;

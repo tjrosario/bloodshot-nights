@@ -1,0 +1,42 @@
+$font-path: '#{$theme-path}/fonts';
+$industry-path: '#{$font-path}/industry';
+
+@font-face {
+  font-family: 'industry_incbase';
+  src: url('#{$industry-path}/fort_foundry_-_industry_inc_base-webfont.woff2') format('woff2'),
+       url('#{$industry-path}/fort_foundry_-_industry_inc_base-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'industry_incbevel';
+  src: url('#{$industry-path}/fort_foundry_-_industry_inc_bevel-webfont.woff2') format('woff2'),
+       url('#{$industry-path}/fort_foundry_-_industry_inc_bevel-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'industry_incinline';
+  src: url('#{$industry-path}/fort_foundry_-_industry_inc_inline-webfont.woff2') format('woff2'),
+       url('#{$industry-path}/fort_foundry_-_industry_inc_inline-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'industry_incin-n-out';
+  src: url('#{$industry-path}/fort_foundry_-_industry_inc_in-n-out-webfont.woff2') format('woff2'),
+       url('#{$industry-path}/fort_foundry_-_industry_inc_in-n-out-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'industry_inc3d';
+  src: url('#{$industry-path}/fort_foundry_-_industry_inc_3d-webfont.woff2') format('woff2'),
+       url('#{$industry-path}/fort_foundry_-_industry_inc_3d-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

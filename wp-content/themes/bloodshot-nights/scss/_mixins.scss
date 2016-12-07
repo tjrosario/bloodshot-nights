@@ -1,0 +1,24 @@
+@mixin span-columns ($columns) {
+  @include susy-breakpoint($tablet, $susy) {
+    @include span($columns);
+  }
+
+  &.last {
+    @include susy-breakpoint($tablet, $susy) {
+      @include span($columns last);
+    }
+  }
+}
+
+@function get-vw($target) {
+  $vw-context: ($max-width*.01) * 1px;
+  @return ($target/$vw-context) * 1vw;
+}
+
+@mixin vw($size) {
+  font-size: get-vw($size);
+
+  @include susy-breakpoint($desktop, $susy) {
+    font-size: $size;
+  }
+}
