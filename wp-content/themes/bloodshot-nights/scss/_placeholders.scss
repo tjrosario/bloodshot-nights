@@ -34,241 +34,56 @@
   width: 1px;
 }
 
-%hero {
-  //height: 200px;
-  height: 100%;
-  //margin: 0 0 200px;
-  position: relative;
-  width: 100%;
-
-  @include susy-breakpoint($tablet, $susy) {
-    //height: 424px;
-   // margin-bottom: 150px;
-  }
-
-  @include susy-breakpoint($desktop, $susy) {
-    //margin-bottom: 100px;
-  }
+%font-regular {
+  font-weight: 400;
 }
 
-.hero__wrapper {
-  position: relative;
-
-  @include susy-breakpoint($tablet, $susy) {
-    margin-bottom: -200px;
-  }
+%font-regular-italic {
+  @extend %font-regular;
+  font-style: italic;
 }
 
-.hero__content {
-  background: $hampton;
-  border: 1px solid $mine-shaft;
-  margin: -100px $gutter-width 0;
-  padding: $gutter-width;
-  text-align: center;
-  
-  @include susy-breakpoint($tablet, $susy) {
-    margin: -310px auto 0;
-    min-height: 364px;
-    padding: 50px;
-    top: 111px;
-    //width: span(5.5);
-  }
-
-  &.--navygold {
-    background-color: $fiord;
-    color: $hampton;
-
-    h2 {
-      color: $hampton;
-    }
-  }
-
-  .mobile & {
-    margin-left: auto;
-    margin-right: auto;
-    width: auto;
-  }
-
-  .hero__description {
-    font-size: 1.8em * $mobile-conversion;
-
-    @include susy-breakpoint($tablet, $susy) {
-      font-size: 1.8em;
-    }
-
-    * {
-      font-size: 1em;
-    }
-  }
-
-  h2 {
-    color: $fuzzy-wuzzy-brown;
-    font-size: 3.5em * $mobile-conversion;
-    margin: 0 0 20px;
-
-    @include susy-breakpoint($tablet, $susy) {
-      font-size: 3.5em;
-    }
-  }
-
-  p {
-    margin: 0 0 25px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  .cta {
-    @extend %reset;
-    background: $fuzzy-wuzzy-brown;
-    color: $hampton;
-    font-family: 'industry_incbase';
-    font-size: 1.4em * $mobile-conversion;
-    letter-spacing: .02em;
-    margin: $gutter-width 0 0;
-    padding: 13px 40px 10px;
-    text-transform: uppercase;
-
-    @include susy-breakpoint($tablet, $susy) {
-      font-size: 1.4em;
-      margin: 50px 0 0;
-    }
-  }
+%font-medium {
+  font-weight: 500;
 }
 
-%menu-container {
-  animation: none;
-  color: $black;
-  font-family: 'Pathway Gothic One', sans-serif;
-  right: 0;
-  text-align: center;
-
-  ul {
-    @extend %reset;
-    display: inline;
-
-    li {
-      background: url('#{$theme-path}/images/dot-gray.png') no-repeat 0 6px;
-      background-size: 5px;
-      display: inline-block;
-      font-size: 2.4em;
-      letter-spacing: .05em;
-      margin: 0 5px 0 0;
-      padding: 0 0 0 16px;
-      text-transform: uppercase;
-
-      &:first-child {
-        background: none;
-        padding-left: 0;
-      }
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-      a {
-        color: $black;
-        padding: 0 0 4px;
-        text-decoration: none;
-
-        &:hover {
-          border-bottom: 1px solid $fuzzy-wuzzy-brown;
-          color: $fuzzy-wuzzy-brown;
-          text-decoration: none;
-        }
-      }
-
-      &.current-menu-item {
-        a {
-          color: $fuzzy-wuzzy-brown;
-
-          &:hover {
-            border-bottom: 0;
-          }
-        }
-      }
-    }
-  }
+%font-medium-italic {
+  @extend %font-medium;
+  font-style: italic;
 }
 
-%site-header {
-  background: $white;
-  border-bottom: 1px solid $black;
-  height: 50px;
-  left: 0;
-  overflow: hidden;
-  padding: 5px 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 999;
+%font-semi-bold {
+  font-weight: 600;
+}
 
-  @include susy-breakpoint($tablet, $susy) {
-    height: 79px;
-    padding: 10px 0;
-  }
+%font-semi-bold-italic {
+  @extend %font-medium;
+  font-style: italic;
+}
 
-  .masthead__wrapper {
-    padding-left: $gutter-width;
-    padding-right: $gutter-width;
-  }
+%font-bold {
+  font-weight: 700;
+}
 
-  .site-title {
-    opacity: 1;
-    transition: all .2s ease-out;
-  }
+%font-bold-italic {
+  @extend %font-bold;
+  font-style: italic;
+}
 
-  .admin-bar & {
-    top: 48px;
+%font-extra-bold {
+  font-weight: 800;
+}
 
-    @include susy-breakpoint($tablet, $susy) {
-      top: 32px;
-    }
-  }
+%font-extra-bold-italic {
+  @extend %font-extra-bold;
+  font-style: italic;
+}
 
-  .site-social {
-    display: none;
+%font-black {
+  font-weight: 900;
+}
 
-    @include susy-breakpoint($desktop, $susy) {
-      @include span(2 last);
-      display: block;
-    }
-
-    .social {
-      margin-top: 14px;
-
-      a {
-        color: $black;
-
-        &:hover {
-          color: $fuzzy-wuzzy-brown;
-        }
-      }
-    }
-  }
-
-  .sidebar-toggle {
-    display: block;
-
-    @include susy-breakpoint($desktop, $susy) {
-      display: none;
-    }
-  }
-
-  .header-navigation {
-    display: none;
-    margin: 23px 0 0;
-    position: relative;
-    text-align: left;
-
-    @include susy-breakpoint($desktop, $susy) {
-      @include span(8);
-      display: block;
-    }
-
-    .menu-header-container {
-      @extend %menu-container;
-    }
-  }
+%font-black-italic {
+  @extend %font-black;
+  font-style: italic;
 }

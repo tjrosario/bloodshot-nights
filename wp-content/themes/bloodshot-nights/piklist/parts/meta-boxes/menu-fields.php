@@ -16,8 +16,28 @@ piklist('field', array(
       'type' => 'text'
       ,'field' => 'menu_title'
       ,'label' => __('Menu Title', 'menu-metabox')
+      ,'columns' => 6
+    )
+    ,array(
+      'type' => 'text'
+      ,'field' => 'menu_subtext'
+      ,'label' => __('Menu Subtext', 'menu-metabox')
+      ,'columns' => 4
+    )
+    ,array(
+      'type' => 'text'
+      ,'field' => 'menu_price'
+      ,'label' => __('Menu Price', 'menu-metabox')
+      ,'columns' => 2
+    )
+    ,array(
+      'type' => 'text'
+      ,'field' => 'menu_description'
+      ,'label' => __('Menu Description', 'menu-metabox')
       ,'columns' => 12
     )
+
+    /*
     ,array(
       'type' => 'select'
       ,'field' => 'menu_title_font'
@@ -107,7 +127,7 @@ piklist('field', array(
       ,'attributes' => array(
         'multiple' => 'multiple'
       )
-    )
+    ) */
     ,array(
       'type' => 'group'
       ,'field' => 'menu_item'
@@ -119,6 +139,13 @@ piklist('field', array(
           ,'label' => __('Item Name', 'menu-metabox')
           ,'columns' => 6
         )
+        ,array(
+          'type' => 'text'
+          ,'field' => 'menu_item_subtext'
+          ,'label' => __('Item Subtext', 'menu-metabox')
+          ,'columns' => 6
+        )
+        /*
         ,array(
           'type' => 'select'
           ,'field' => 'menu_item_font'
@@ -134,7 +161,7 @@ piklist('field', array(
           ,'choices' => $colors
           ,'value' => '#3d5265'
           ,'columns' => 3
-        )
+        )*/
         ,array(
           'type' => 'text'
           ,'field' => 'menu_item_description'
@@ -144,9 +171,10 @@ piklist('field', array(
         ,array(
           'type' => 'text'
           ,'field' => 'menu_item_price1'
-          ,'label' => __('Item Price #1', 'menu-metabox')
+          ,'label' => __('Item Price', 'menu-metabox')
           ,'columns' => 3
         )
+        /*
         ,array(
           'type' => 'text'
           ,'field' => 'menu_item_price2'
@@ -182,7 +210,7 @@ piklist('field', array(
               true => 'Enable'
             )
           ,'columns' => 6
-        )
+        )*/
         ,array(
           'type' => 'group'
           ,'field' => 'menu_subitem'
@@ -192,7 +220,13 @@ piklist('field', array(
               'type' => 'text'
               ,'field' => 'menu_subitem_name'
               ,'label' => __('Subitem Name', 'menu-metabox')
-              ,'columns' => 9
+              ,'columns' => 6
+            )
+            ,array(
+              'type' => 'text'
+              ,'field' => 'menu_subitem_subtext'
+              ,'label' => __('Subitem Subtext', 'menu-metabox')
+              ,'columns' => 6
             )
             ,array(
               'type' => 'text'
@@ -206,12 +240,13 @@ piklist('field', array(
               ,'label' => __('Subitem Price #1', 'menu-metabox')
               ,'columns' => 6
             )
+            /*
             ,array(
               'type' => 'text'
               ,'field' => 'menu_subitem_price2'
               ,'label' => __('Subitem Price #2', 'menu-metabox')
               ,'columns' => 6
-            )
+            )*/
           )
         )
       )

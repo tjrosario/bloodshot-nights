@@ -6,155 +6,26 @@
 
 .page-homepage,
 .home {
-  padding-top: 50px;
-
-  @include susy-breakpoint($tablet, $susy) {
-    padding-top: 0;
+  h1 {
+    @extend %hidden;
   }
 
-  &.admin-bar {
-    padding-top: 48px;
-
-    @include susy-breakpoint($tablet, $susy) {
-      padding-top: 0;
-    }
-  }
-
-  .hero-container {
-    @include susy-breakpoint($tablet, $susy) {
-      height: 682px;
-    }
-
-    .hero__bg {
-      animation: zoom 30s forwards;
+  #masthead {
+    .header-navigation {
+      display: block;
+      position: relative;
+      width: auto;
     }
   }
 
-  .hero {
-    align-items: center;
-    display: flex;
-    padding: 85px $gutter-width;
-
-    @include susy-breakpoint($tablet, $susy) {
-      //height: 682px;
-      padding: $gutter-width;
-    }
-
-
-    .hero__content_alt {
-      @include susy-breakpoint($desktop, $susy) {
-        flex-grow: 1;
-        font-size: 7px;
-      }
-
-      .logo-home {
-        display: block;
-      }
-
-      .menu-header-container {
-        margin: 15px 0 0;
-
-        @include susy-breakpoint($desktop, $susy) {
-          display: block;
-        }
-
-        li {
-          background: url('#{$theme-path}/images/dot-red.png') no-repeat 0 15px;
-          font-size: 3.5em;
-
-          &:last-child {
-            display: none;
-          }
-
-          a {
-            @include susy-breakpoint($desktop, $susy) {
-              color: $white;
-            }
-
-            &:hover {
-              @include susy-breakpoint($desktop, $susy) {
-                border: 0;
-                color: $fuzzy-wuzzy-brown;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .hero__content {
-    display: none;
-  }
-
-  .site-header {
-    @include susy-breakpoint($desktop, $susy) {
-      background: none;
-      border: 0;
-      position: absolute;
-      top: 0;
-    }
-
-    .admin-bar & {
-      @include susy-breakpoint($tablet, $susy) {
-        top: 0;
-      }
-    }
+  .site-branding {
+    float: none;
+    width: auto;
 
     .site-title {
-      @include susy-breakpoint($desktop, $susy) {
-        opacity: 0;
-      }
-    }
-
-    .header-navigation {
-      .menu-header-container {
-        ul {
-          li {
-            visibility: hidden;
-
-            &:last-child {
-              visibility: visible;
-            }
-
-            a {
-              @include susy-breakpoint($desktop, $susy) {
-                color: $white;
-              }
-
-              &:hover {
-                @include susy-breakpoint($desktop, $susy) {
-                  border: 0;
-                  color: $fuzzy-wuzzy-brown;
-                }
-              }
-            }
-          }
-        }
-      }
-    }      
-
-    .social {
-      a {
-        @include susy-breakpoint($desktop, $susy) {
-          color: $white;
-        }
-      }
-    }
-  }
-
-  &.sticky-nav {
-    #masthead {
-      top: 0;
-    }
-
-    .header-navigation {
-      .menu-header-container {
-        ul {
-          li {
-            visibility: visible;
-          }
-        }
+      img {
+        margin: 0 auto;
+        max-height: none;
       }
     }
   }

@@ -152,7 +152,7 @@ function magnus_scripts() {
 
 	// Load our main stylesheet.
 	wp_enqueue_style( 'magnus-style', get_stylesheet_uri() );
-  wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Pathway+Gothic+One' );
+  wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Lobster+Two:400,400i,700,700i|Raleway:400,400i,500,500i,600,600i,700,700i' );
   wp_enqueue_style( 'app-style', get_template_directory_uri() . '/dist/styles/app.css' );
 
     // Load scripts

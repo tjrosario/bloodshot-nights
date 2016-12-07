@@ -1,13 +1,9 @@
 body {
-  background: none;
-  color: $mine-shaft;
-  font-family: 'Pathway Gothic One', sans-serif;
+  background: $black;
+  color: $white;
+  font-family: $font-raleway;
   font-size: 10px;
-  padding: 50px 0 0;
-
-  @include susy-breakpoint($tablet, $susy) {
-    padding-top: 79px;
-  }
+  font-weight: 500;
 }
 
 img {
@@ -35,584 +31,195 @@ img {
   padding-right: $gutter-width;
 }
 
-.menus {
-  text-align: left;
-}
-
-.align-left { text-align: left; }
-
-.align-center { text-align: center; }
-
-.align-right { text-align: right; }
-
-.position-left {
-  margin-left: 0 !important;
-}
-
-.position-center {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'industry_incbevel';
-  font-weight: normal;
-  letter-spacing: .05em;
-}
-
-h1 {
-  @extend %hidden;
-}
-
 a {
-  //color: $breeze;
+  color: $white;
 }
 
-ul,
-ol {
-  //padding-left: $gutter-width;
-
-  @include susy-breakpoint($tablet, $susy) {
-    //padding-left: $gutter-width * 3;
-  }
+.site {
+  width: auto;
 }
 
-p {
-  font-size: 1.8em;
-}
+#sidebar {
+  background: $black;
+  overflow: hidden;
+  padding: 0;
 
-#colophon {
-  background-color: $fiord;
-  color: $hampton;
-  padding: 40px $gutter-width $gutter-width;
-  text-align: center;
-
-  .site-footer__top {
-    margin-bottom: $gutter-width;
-  }
-
-  a {
-    color: $hampton;
-  }
-
-  h6 {
-    color: $hampton;
-    font-family: 'Pathway Gothic One', sans-serif;
-    font-size: 1.4em;
-    margin: 0;
-    text-transform: uppercase;
-  }
-
-  .content {
-    position: relative;
-  }
-
-  .company-hours {
-    font-family: 'industry_incbevel';
-    margin: 0 0 $gutter-width;
-    padding: 12px 0 0;
+  .admin-bar & {
+    top: 48px;
 
     @include susy-breakpoint($tablet, $susy) {
-      margin: 0;
+      top: 32px;
     }
+  }
 
-    .content {
-      font-size: 2.6em * $mobile-conversion;
-      letter-spacing: .05em;
-      padding: 7px 0;
+  .sidebar-toggled & {
+    width: 95%;
 
-      @include susy-breakpoint($tablet, $susy) {
-        font-size: 2.6em;
+    @include susy-breakpoint($tablet, $susy) {
+      width: 300px;
+    }
+  }
+
+  .main-navigation {
+    font-size: inherit;
+    font-weight: normal;
+    margin: 0 0 30px;
+    padding: 0;
+    text-align: left;
+    text-shadow: 0 0 0;
+
+    li {
+      font-size: 1.6em;
+      margin: 0 0 $gutter-width;
+
+      &:last-child {
+        margin-bottom: 0;
       }
     }
-  }
-
-  .company-address {
-    font-family: 'industry_incbevel';
-
-    .content {
-      font-size: 2.4em * $mobile-conversion;
-
-      @include susy-breakpoint($tablet, $susy) {
-        font-size: 2.4em;
-      }
-    }
-  }
-
-  .company-phone {
-    font-family: 'industry_incbevel';
-
-    h6 {
-      display: inline;
-      margin: 0 20px 0 0;
-    }
-
-    div {
-      display: inline;
-    }
-
-    .content {
-      font-size: 2.2em * $mobile-conversion;
-      letter-spacing: .05em;
-      top: 3px;
-
-      @include susy-breakpoint($tablet, $susy) {
-        font-size: 2.2em;
-      }
-    }
-  }
-
-  .company-social {
-    font-family: 'industry_incbevel';
-
-    h6 {
-      display: inline;
-      margin: 0 20px 0 0;
-    }
-
-    .content,
-    .social {
-      display: inline;
-    }
-
-    .content {
-      top: 1px;
-    }
-  }
-
-  .social {
-    position: relative;
-    top: 2px;
 
     a {
+      color: $white;
+      padding: 0;
       transition: all .2s ease-out;
 
       &:hover {
-        opacity: .65;
+        color: $blaze-orange;
       }
     }
   }
 
-  .col-b {
-    margin-bottom: $gutter-width;
+  .site-social {
+    margin: 0 0 0 -8px;
+  }
 
-    @include susy-breakpoint($tablet, $susy) {
-      border-left: 1px solid $hampton;
-      border-right: 1px solid $hampton;
-      margin-bottom: 0;
-    }
+  .sidebar-inner {
+    max-width: none;
+    padding: $gutter-width;
+    transition: none;
+  }
 
-    .top {
-      border-bottom: 1px solid $hampton;
-      padding: 0 0 12px;
+  .site-branding {
+    animation: none;
+    float: none;
+    margin: 0 0 30px;
+    max-width: 120px;
+    transition: none;
 
-      @include susy-breakpoint($tablet, $susy) {
-
-      }
-    }
-
-    .bottom {
-      .col-a {
-        padding: 14px 0;
-      }
-
-      .col-b {
-        @include susy-breakpoint($tablet, $susy) {
-          border-right: 0;
-          padding: 14px 0;
-        }
+    .site-title {
+      a {
+        margin: 0 auto;
       }
     }
   }
 
-  .col-c {
-    margin-right: 0;
-
-    h6 {
-      margin: 0 0 10px;
-    }
+  .sidebar-toggle {
+    color: $white;
+    display: block;
+    font-size: 2.6em;
   }
 }
 
-#mc_embed_signup {
-  @include susy-breakpoint($tablet, $susy) {
-    width: 175px;
-  }
-
-  #mc-embedded-subscribe-form {
-    .mc-field-group {
-      label {
-        @extend %hidden;
-      }
-
-      input {
-        background: $blue-bayoux;
-        border: 0;
-        border-radius: 0;
-        box-shadow: 0 0 0;
-        color: $white;
-        font-size: 12px;
-        padding: 10px 15px;
-        text-align: center;
-        width: 100%;
-
-        &:focus {
-          border-color: $fiord;
-        }
-      }
-    }
-
-    div.mce_inline_error {
-      background: none;
-      border-radius: 0;
-      font-size: 12px;
-      font-weight: normal;
-    }
-
-    .response {
-      font-size: 12px; 
-      margin: 10px 0;
-    }
-
-    .button {
-      background: $pale-sky;
-      border: 1px solid $hampton;
-      border-radius: 0;
-      box-shadow: 0 0 0;
-      color: $hampton;
-      display: block;
-      font-family: 'industry_incbase';
-      font-size: 1.3em;
-      letter-spacing: 0;
-      padding: 10px 15px;
-      text-transform: uppercase;
-      width: 100%;
-
-      &:hover {
-        text-shadow: 0 0 0;
-      }
-    }
-
-    .indicates-required {
-      @extend %hidden;
-    }
-  }
-}
-
-#content {
-  background-color: $white;
-  text-align: center;
-}
-
-#primary {
-  background-position: center top;
-  background-repeat: no-repeat;
-  //background-size: cover;
+.sidebar-toggle {
+  @extend %reset;
+  animation: none;
+  color: $white;
+  display: block;
+  font-size: 2.6em;
+  right: $gutter-width;
+  top: 5px;
+  transform: none;
 
   @include susy-breakpoint($tablet, $susy) {
-    padding-top: 200px;
+    display: none;
+    top: 20px;
   }
 
-  .mobile & {
-    background: none !important;
-  }
-
-  .page-content, 
-  .entry-content, 
-  .entry-summary {
-    margin: 0;
-    padding: 35px 0;
-  }
-
-  h2 {
-    display: inline-block;
-    font-family: 'industry_inc3d';
-    font-size: 4.1em;
-    position: relative;
-
-    &:before {
-      background: $fiord;
-      content: '';
-      height: 1px;
-      left: -(105px + 35);
-      position: absolute;
-      top: 44%;
-      width: 105px;
-    }
-
-    &:after {
-      background: $fiord;
-      content: '';
-      height: 1px;
-      position: absolute;
-      right: -(105px + 35);
-      top: 44%;
-      width: 105px;
-    }
-
-    .mobile & {
-      margin-top: 0 !important;
-    }
-  }
-
-  .hentry {
-    @extend %reset;
-    font-size: 7px;
+  .sidebar-toggled &,
+  .sidebar-toggled.admin-bar {
+    position: absolute;
+    top: 5px !important;
+    transform: none !important;
 
     @include susy-breakpoint($tablet, $susy) {
-      font-size: inherit;
+      top: 20px;
     }
+  }
+}
 
-    pre {
-      background: none;
-      overflow-x: hidden;
-    }
+.social {
+  @extend %reset;
 
-    h3 {
-      font-family: 'industry_incin-n-out';
-      font-size: 3.2em;
+  li {
+    display: inline-block;
+    font-size: 2em;
+    margin: 0 10px;
+
+    &:last-child {
+      margin-right: 0;
     }
   }
 
-  .menu {
-    background: $white;
-    border: 2px solid $scorpion;
-    color: $fiord;
-    display: inline-block;
-    margin-bottom: 60px;
-    position: relative;
-    vertical-align: top;
+  a {
+    color: $white;
 
-    &.--break-after {
-      display: block;
+    &:hover {
+      color: $blaze-orange;
     }
+  }
+}
 
-    .mobile & {
-      display: block !important;
-      left: auto !important;
-      margin-left: 0 !important;
-      top: auto !important;
-      width: auto !important;
-    }
+#masthead {
+  background: $black;
 
-    &.list {
-      .menu__item-prices {
-        color: $fuzzy-wuzzy-brown;
-        margin: 0;
-      }
-    }
+  .header-navigation {
+    @extend %font-bold-italic;
+    display: none;
+    font-family: $font-lobster;
+    font-size: 32px;
+    margin: 0 0 80px;
+    text-align: center;
+    text-transform: none;
 
-    &.grid {
-      .menu__category {
-        padding: 0;
-      }
+    .menu-header-container {
+      animation: none;
+      right: auto;
 
-      .menu__item {
-        .menu__item-description {
-          margin: 0;
-        }
-      }
-    }
-
-    .menu__header {
-      border-bottom: 2px solid $scorpion; 
-      padding: 0 0 2px;
-
-      th {
-        border-bottom: 2px solid $scorpion; 
-      }
-    }
-
-    .menu__addons {
-      .menu__header {
-        border-top: 1px solid $scorpion; 
-        border-width: 1px;
-      }
-
-      .menu__category {
-        border: 0;
-        font-family: 'industry_incin-n-out';
-      }
-
-      .menu__items {
-        @extend %clearfix;
-
-        .menu__item {
-          margin: 0;
-        }
-
-        .menu__item-name {
-          color: $fiord;
-        }
-
-        .menu__item-prices {
-          color: $fiord;
-        }
-      }
-
-      &.--addon-cols {
-        .menu__item {
-          @include susy-breakpoint($tablet, $susy) {
-            @include span-columns(6);
-          }
-
-          &:nth-child(2n) {
-            margin-right: 0;
-          }
-        }
-      }
-    }
-
-    .menu__category {
-      border-bottom: 2px solid $scorpion; 
-      font-size: 3.2em;
-      margin: 0;
-      padding: 10px $gutter-width 5px;
-    }
-
-    .menu__items {
-      padding: 24px $gutter-width;
-
-      .menu__item-name {
+      ul {
+        @extend %reset;
         display: inline;
-      }
-
-      .menu__item-prices {
-        display: inline;
-
-        .menu__item-price {
-          margin-right: 12px;
-
-          &:last-of-type {
-            margin-right: 0;
-          }
-        }
-      }
-    }
-
-    .menu__item {
-      margin: 0 0 5px;
-
-      .menu__item-name {
-        color: $fuzzy-wuzzy-brown;
-        font-family: 'Pathway Gothic One', sans-serif;
-        font-size: 1.8em;
-        line-height: 1.4;
-        margin: 0;
-        text-transform: none;
-      }
-
-      .menu__item-description {
-        font-size: 1.8em;
-        line-height: 1.4;
-        margin: 0 0 15px;
-      }
-    }
-
-    table {
-      border-collapse: unset;
-      margin: 0;
-      text-align: left;
-
-      tbody {
-        padding: 10px 0 0;
-      }
-
-      th {
-        background: none;
-        color: $fuzzy-wuzzy-brown;
-        font-family: 'industry_incbevel';
-        font-size: 16px;
-        font-weight: normal;
-        line-height: 1.3;
-        padding: 11px 15px 6px 20px;
-        text-align: center;
-        vertical-align: center;
-      }
-
-      td {
-        border: 0;
-        line-height: 1.3;
-        padding: 6px $gutter-width;
-        vertical-align: top;
-      }
-
-      .menu__category {
-        border: 0;
-        color: $fuzzy-wuzzy-brown;
-        font-size: 32px;
         text-align: left;
-      }
 
-      .menu__item {
-        .menu__item-name {
-          font-family: 'Pathway Gothic One', sans-serif;
-        }
+        li {
+          margin: 0 205px 0 0;
 
-        .menu__item-price {
-          color: $bombay;
-          font-size: 16px;
-          text-align: center;
-        }
+          &:last-child {
+            margin-right: 0;
+          }
 
-        .menu__item-subitem {
-          margin: 0;
-        }
+          a {
+            color: $white;
 
-        &.top {
-          &.group {
-            margin: 0;
-
-            td {
-              border-bottom: 2px solid $fiord;
-              border-top: 2px solid $fiord;
-              padding: 3px 20px 0;
+            &:hover {
+              color: $blaze-orange;
             }
           }
         }
       }
     }
   }
-}
 
-.hero-container {
-  height: 200px;
-  overflow: hidden;
-  position: relative;
+  .site-branding {
+    animation: none;
+    transition: none;
 
-  @include susy-breakpoint($tablet, $susy) {
-    height: 424px;
-  }
+    .site-title {
+      a {
+        display: block;
+      }
 
-  .hero__bg {
-    background-position: center center;
-    background-size: cover;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
-}
-
-.hero {
-  @extend %hero;
-  position: relative;
-  z-index: 2;
-
-  .hero__content_alt {
-    .logo-home {
-      display: none;
-    }
-
-    .menu-header-container {
-      @extend %menu-container;
-      display: none;
+      img {
+        display: block;
+      }
     }
   }
 }
@@ -644,50 +251,189 @@ p {
   }
 }
 
-.social {
+.site-header-image {
+  display: none;
+}
+
+#colophon {
+  background: $black;
+  font-size: 13px;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.hentry {
   @extend %reset;
+}
 
-  li {
-    display: inline-block;
-    font-size: 2em;
-    margin: 0 10px;
+.page-content, 
+.entry-content, 
+.entry-summary {
+  @extend %reset;
+}
 
-    &:last-child {
-      margin-right: 0;
+#content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @extend %font-medium;
+    color: $white;
+    font-family: $font-raleway;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .site-main {
+    h1 {
+      @extend %font-bold-italic;
+      font-family: $font-lobster;
+      font-size: 32px;
+      text-align: center;
     }
   }
 
-  a {
+  .menu {
+    background: $white;
+    border-radius: 15px;
     color: $black;
+    padding: $gutter-width;
 
-    &:hover {
-      color: $fuzzy-wuzzy-brown;
+    * {
+      color: $black;
+      font-size: 16px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    &__header {
+      border-bottom: 1px solid $black;
+      margin: 0 0 10px;
+      padding: 0 0 10px;
+    }
+
+    &__category {
+      color: $milano-red;
+      font-size: 24px;
+      margin: 0 0 3px;
+      position: relative;
+    }
+
+    &__price {
+      bottom: 0;
+      color: $milano-red;
+      font-size: 24px;
+      position: absolute;
+      right: 0;
+    }
+
+    &__subtext {
+      color: $milano-red;
+      font-size: 18px;
+    }
+
+    &__description {
+      @extend %font-medium-italic;
+      font-size: 14px;
+    }
+
+    &__items {
+      padding: 4px 0;
+    }
+
+    &__item {
+      margin: 0 0 $gutter-width;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__item-header {
+      @extend %clearfix;
+      position: relative;
+    }
+
+    &__item-name {
+      color: $milano-red;
+      margin: 0 0 2px;
+    }
+
+    &__item-prices {
+      position: absolute;
+      right: 0;
+      top: -4px;
+    }
+
+    &__item-price {
+      color: $milano-red;
+    }
+
+    &__item-subtext {
+      @extend %font-regular-italic;
+      color: $black;
+      font-size: 14px;
+    }
+
+    &__item-subitems {
+      padding: 8px 0 0;
+    }
+
+    &__item-subitem {
+      margin: 0 0 10px;
+    }
+
+    &__subitem-name {
+      margin: 0;
+    }
+
+    &__subitem-subtext {
+      @extend %font-regular;
+      color: $black;
+      font-size: 14px;
     }
   }
 }
 
-.site-header {
-  @extend %site-header;
-}
+.masonry-layout {
+  @include susy-breakpoint($tablet, $susy) {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
 
-.sticky-nav {
-  #masthead {
-    @extend %site-header;
+  &__panel {
+    margin: 0 0 $gutter-width;
 
     @include susy-breakpoint($tablet, $susy) {
-      top: 32px;
+      display: inline-block;
+      margin: 0 0 10px;
+      width: 100%;
+    }
+
+    &:nth-child(even) {
+      @include susy-breakpoint($tablet, $susy) { 
+        order: 2;
+      }
     }
   }
 }
 
-.widget {
-  text-shadow: 0 0 0;
-}
-
-#sidebar {
-  background: $black;
-  overflow: hidden;
-  padding: 0;
+#reveal-modal-id {
+  background: $milano-red;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  padding: $gutter-width;
+  width: 100%;
+  z-index: 9999;
 
   .admin-bar & {
     top: 48px;
@@ -697,126 +443,16 @@ p {
     }
   }
 
-  .sidebar-toggled & {
-    width: 95%;
-
-    @include susy-breakpoint($tablet, $susy) {
-      width: 300px;
-    }
-  }
-
-  .main-navigation {
-    font-size: inherit;
-    font-weight: normal;
-    margin: 0 0 30px;
-    padding: 0;
-    text-align: left;
-
-    li {
-      font-size: 1.6em;
-      margin: 0 0 $gutter-width;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-
-    a {
-      color: $hampton;
-      padding: 0;
-      transition: all .2s ease-out;
-
-      &:hover {
-        opacity: .65;
-      }
-    }
-  }
-
-  .sidebar-inner {
-    max-width: none;
-    padding: $gutter-width;
-    transition: none;
-  }
-
-  .site-branding {
-    float: none;
-    margin: 0 0 30px;
-
-    .site-title {
-      a {
-        margin: 0 auto;
-      }
-    }
-  }
-
-  .sidebar-toggle {
+  .close-reveal-modal {
+    @extend %font-regular;
     color: $white;
-    display: block;
-    font-size: 2.6em;
+    font-size: 120px;
+    right: 20px;
+    top: -20px;
   }
-}
 
-.sidebar-toggle {
-  @extend %reset;
-  animation: none;
-  color: $black;
-  display: block;
-  font-size: 2.6em;
-  right: $gutter-width;
-  top: 5px;
-  transform: none;
-
-  @include susy-breakpoint($tablet, $susy) {
+  .next-post-reveal-nav,
+  .prev-post-reveal-nav {
     display: none;
-    top: 20px;
-  }
-
-  .sidebar-toggled &,
-  .sidebar-toggled.admin-bar {
-    position: absolute;
-    top: 5px !important;
-    transform: none !important;
-
-    @include susy-breakpoint($tablet, $susy) {
-      top: 20px;
-    }
-  }
-}
-
-.site-header-image {
-  margin: 0;
-}
-
-.site {
-  width: auto;
-}
-
-.copyright {
-  color: $white;
-  font-size: 1.2em;
-  letter-spacing: .05em;
-}
-
-#spic {
-  .owl-theme {
-    .owl-nav [class*="owl-"]:first-child {
-      background: url('#{$theme-path}/images/arrows.png') 0 0 !important;
-      border-radius: 0;
-      height: 58px;
-      left: 0;
-      margin: 0;
-      opacity: 1;
-      width: 29px;
-    }
-
-    .owl-nav [class*="owl-"]:last-child {
-      background: url('#{$theme-path}/images/arrows.png') 0 -58px !important;
-      border-radius: 0;
-      height: 58px;
-      margin: 0;
-      opacity: 1;
-      right: 0;
-      width: 29px;
-    }
   }
 }

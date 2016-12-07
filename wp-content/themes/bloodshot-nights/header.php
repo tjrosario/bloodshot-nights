@@ -23,16 +23,6 @@
 	
 	<header id="masthead" class="site-header" role="banner">
 		<div class="masthead__wrapper wrapper content-area">
-			<div class="site-branding">
-
-      <div class="site-title">
-          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php bloginfo( 'name' ); ?>">
-              <img src="<?=get_template_directory_uri() ?>/images/logo.png">
-          </a>
-      </div>
-
-				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="header-navigation" role="navigation">
 				<div class="menu-header-container">
@@ -47,6 +37,17 @@
 				</div>
 				
 			</nav><!-- #site-navigation -->
+			
+			<div class="site-branding">
+
+      <div class="site-title">
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php bloginfo( 'name' ); ?>">
+              <img src="<?=get_template_directory_uri() ?>/images/logo.png">
+          </a>
+      </div>
+
+				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+			</div><!-- .site-branding -->
 
 			<?php 
 				$theme_options = get_option('my_theme_settings');
