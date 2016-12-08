@@ -1,0 +1,17 @@
+.page-menu {
+  #sidenav {
+    display: block;
+    
+    @include susy-breakpoint($tablet, $susy) {
+      @include span(4);
+      padding-top: 30px;
+    }
+  }
+
+  #primary {
+    @include susy-breakpoint($tablet, $susy) {
+      @include span(8 last);
+      margin-top: -60px;
+    }
+  }
+}

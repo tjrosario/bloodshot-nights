@@ -6,6 +6,76 @@ Setting: my_theme_settings
 
 include('variables.php');
 
+piklist('field', array(
+  'type' => 'group'
+  ,'field' => 'locations'
+  ,'label' => __('Locations', 'menu-metabox')
+  ,'add_more' => true
+  ,'fields' => array(
+    array(
+      'type' => 'text'
+      ,'field' => 'location_street1'
+      ,'label' => __('Street Address 1', 'menu-metabox')
+      ,'columns' => 6
+    )
+    ,array(
+      'type' => 'text'
+      ,'field' => 'location_street2'
+      ,'label' => __('Street Address 2', 'menu-metabox')
+      ,'columns' => 6
+    )
+    ,array(
+      'type' => 'text'
+      ,'field' => 'location_city'
+      ,'label' => __('City', 'menu-metabox')
+      ,'columns' => 3
+    )
+    ,array(
+      'type' => 'select'
+      ,'field' => 'location_state'
+      ,'label' => __('State', 'menu-metabox')
+      ,'columns' => 3
+      ,'choices' => $states
+    )
+    ,array(
+      'type' => 'text'
+      ,'field' => 'location_zip'
+      ,'label' => __('ZIP', 'menu-metabox')
+      ,'columns' => 3
+    )
+    ,array(
+      'type' => 'text'
+      ,'field' => 'location_phone'
+      ,'label' => __('Phone', 'menu-metabox')
+      ,'columns' => 3
+    )
+    ,array(
+      'type' => 'text'
+      ,'field' => 'location_grubhub'
+      ,'label' => __('GrubHub URL', 'menu-metabox')
+      ,'columns' => 6
+    )
+    ,array(
+      'type' => 'text'
+      ,'field' => 'location_doordash'
+      ,'label' => __('DoorDash URL', 'menu-metabox')
+      ,'columns' => 6
+    )
+    ,array(
+      'type' => 'text'
+      ,'field' => 'location_postmates'
+      ,'label' => __('Postmates URL', 'menu-metabox')
+      ,'columns' => 6
+    )
+    ,array(
+      'type' => 'text'
+      ,'field' => 'location_uber_eats'
+      ,'label' => __('Uber Eats URL', 'menu-metabox')
+      ,'columns' => 6
+    )
+  )
+));
+
 // social media
 piklist('field', array(
   'type' => 'text'

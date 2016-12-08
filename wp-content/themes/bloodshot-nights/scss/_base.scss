@@ -33,6 +33,7 @@ img {
 
 a {
   color: $white;
+  transition: none;
 }
 
 .site {
@@ -61,15 +62,15 @@ a {
   }
 
   .main-navigation {
-    font-size: inherit;
-    font-weight: normal;
+    @extend %font-bold-italic;
+    font-family: $font-lobster;
     margin: 0 0 30px;
     padding: 0;
     text-align: left;
     text-shadow: 0 0 0;
 
     li {
-      font-size: 1.6em;
+      font-size: 16px;
       margin: 0 0 $gutter-width;
 
       &:last-child {
@@ -115,7 +116,7 @@ a {
   .sidebar-toggle {
     color: $white;
     display: block;
-    font-size: 2.6em;
+    font-size: 26px;
   }
 }
 
@@ -124,7 +125,7 @@ a {
   animation: none;
   color: $white;
   display: block;
-  font-size: 2.6em;
+  font-size: 26px;
   right: $gutter-width;
   top: 5px;
   transform: none;
@@ -136,6 +137,7 @@ a {
 
   .sidebar-toggled &,
   .sidebar-toggled.admin-bar {
+    display: none;
     position: absolute;
     top: 5px !important;
     transform: none !important;
@@ -151,7 +153,7 @@ a {
 
   li {
     display: inline-block;
-    font-size: 2em;
+    font-size: 20px;
     margin: 0 10px;
 
     &:last-child {
@@ -226,6 +228,7 @@ a {
 
 .site-branding {
   animation: none;
+  padding: 0;
 
   @include susy-breakpoint($tablet, $susy) {
     @include span(2);
@@ -241,7 +244,7 @@ a {
       max-height: 40px;
 
       @include susy-breakpoint($tablet, $susy) {
-        max-height: 60px;
+        max-height: 80px;
       }
     }
   }
@@ -274,6 +277,45 @@ a {
   @extend %reset;
 }
 
+#sidenav {
+  display: none;
+
+  ul {
+    @extend %reset;
+    @extend %font-bold;
+    font-size: 16px;
+    text-transform: uppercase;
+
+    li {
+      margin: 0 0 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        text-decoration: none;
+
+        &:hover {
+          color: $blaze-orange;
+        }
+      }
+    }
+  }
+}
+
+#primary {
+  position: relative;
+}
+
+h1 {
+  @extend %font-bold-italic;
+  font-family: $font-lobster;
+  font-size: 32px;
+  margin: 0 0 $gutter-width;
+  text-align: center;
+}
+
 #content {
   h1,
   h2,
@@ -294,6 +336,7 @@ a {
       @extend %font-bold-italic;
       font-family: $font-lobster;
       font-size: 32px;
+      margin: 0 0 $gutter-width;
       text-align: center;
     }
   }
@@ -428,12 +471,19 @@ a {
 
 #reveal-modal-id {
   background: $milano-red;
+  color: $white;
   height: 100%;
   left: 0;
   margin: 0;
-  padding: $gutter-width;
+  padding: 40px $gutter-width;
+  top: 0;
   width: 100%;
   z-index: 9999;
+
+  h1 {
+    color: $white;
+    margin: 0 0 50px;
+  }
 
   .admin-bar & {
     top: 48px;
@@ -454,5 +504,104 @@ a {
   .next-post-reveal-nav,
   .prev-post-reveal-nav {
     display: none;
+  }
+
+  .locations {
+    display: block;
+    margin: 0 -$gutter-width;
+  }
+}
+
+.button {
+  @extend %font-bold-italic;
+  border: 1px solid $blaze-orange;
+  border-radius: 20px;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $font-lobster;
+  font-size: 18px;
+  padding: 8px 25px;
+  text-decoration: none;
+}
+
+.locations {
+  display: none;
+}
+
+.location {
+  @extend %clearfix;
+  border-bottom: 1px solid $new-york-pink;
+  font-size: 16px;
+
+  &:last-child {
+    border: 0;
+  }
+
+  &__top {
+    padding: 30px 0;
+  }
+
+  .col-a {
+    text-align: right;
+  }
+
+  .button {
+    color: $white;
+    margin: 15px 0 0;
+  }
+
+  .services {
+    background: $white;
+    max-height: 0;
+    overflow: hidden;
+    text-align: center;
+    transition: all .3s ease-out;
+
+    &__content {
+      @extend %clearfix;
+      display: inline-block;
+    }
+
+    h6 {
+      @extend %font-regular-italic;
+      color: $black;
+      display: inline-block;
+      font-family: $font-lobster;
+      font-size: 16px;
+      margin: 40px 10px 0 0;
+      text-transform: none;
+    }
+
+    ul {
+      @extend %reset;
+      display: inline-block;
+      height: 99px;
+      vertical-align: top;
+
+      li {
+        display: inline-block;
+      }
+
+      img {
+        display: block;
+      }
+
+      a {
+        display: block;
+        height: 99px;
+        width: 140px;
+
+        &:hover {
+          background: $pot-pourri;
+        }
+      }
+    }
+  }
+
+  &.open {
+    .services {
+      max-height: 200px;
+    }
   }
 }

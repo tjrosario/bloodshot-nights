@@ -4,21 +4,21 @@ img {
   max-width: 100%;
   width: auto; }
 
-.row:after, .wrapper:after, #content .menu__item-header:after {
+.row:after, .wrapper:after, #content .menu__item-header:after, .location:after, .location .services__content:after {
   clear: both;
   content: '';
   display: table; }
 
 .sidebar-toggle, .social, #masthead .header-navigation .menu-header-container ul, .hentry, .page-content,
 .entry-content,
-.entry-summary {
+.entry-summary, #sidenav ul, .location .services ul {
   border: 0;
   list-style: none;
   margin: 0;
   padding: 0; }
 
-.site-branding .site-description, .page-homepage h1,
-.home h1 {
+.site-branding .site-description, .page-homepage #primary h1,
+.home #primary h1 {
   height: 1px;
   left: -999em;
   overflow: hidden;
@@ -26,10 +26,10 @@ img {
   top: auto;
   width: 1px; }
 
-#content .menu__item-subtext, #content .menu__subitem-subtext, #reveal-modal-id .close-reveal-modal {
+#content .menu__item-subtext, .location .services h6, #content .menu__subitem-subtext, #reveal-modal-id .close-reveal-modal {
   font-weight: 400; }
 
-#content .menu__item-subtext {
+#content .menu__item-subtext, .location .services h6 {
   font-style: italic; }
 
 #content .menu__description, #content h1,
@@ -43,10 +43,10 @@ img {
 #content .menu__description {
   font-style: italic; }
 
-#masthead .header-navigation, #content .site-main h1 {
+#sidebar .main-navigation, #masthead .header-navigation, h1, #content .site-main h1, .button, #sidenav ul {
   font-weight: 700; }
 
-#masthead .header-navigation, #content .site-main h1 {
+#sidebar .main-navigation, #masthead .header-navigation, h1, #content .site-main h1, .button {
   font-style: italic; }
 
 html {
@@ -270,192 +270,147 @@ th {
   font-weight: normal;
   font-style: normal; }
 
-.span1 {
-  width: 6.3829787234%; }
-
-.span2 {
-  width: 14.8936170213%; }
-
-.span3 {
-  width: 23.4042553191%; }
-
-.span3-5 {
-  width: 27.6595744681%; }
-
-.span4 {
-  width: 31.914893617%; }
-
-.span5 {
-  width: 40.4255319149%; }
-
-.span5-5 {
-  width: 44.6808510638%; }
-
-.span6 {
-  width: 48.9361702128%; }
-
-.span7 {
-  width: 57.4468085106%; }
-
-.span7-5 {
-  width: 61.7021276596%; }
-
-.span8 {
-  width: 65.9574468085%; }
-
-.span9 {
-  width: 74.4680851064%; }
-
-.span10 {
-  width: 82.9787234043%; }
-
-.span11 {
-  width: 91.4893617021%; }
-
-.span12 {
-  width: 100%; }
-
 @media (min-width: 768px) {
-  .span-cols1 {
+  .span1 {
     width: 6.3829787234%;
     float: left;
     margin-right: 2.1276595745%; } }
 
 @media (min-width: 768px) {
-  .span-cols1.last {
+  .span1.last {
     width: 6.3829787234%;
     float: left;
     margin-right: 0; } }
 
 @media (min-width: 768px) {
-  .span-cols2 {
+  .span2 {
     width: 14.8936170213%;
     float: left;
     margin-right: 2.1276595745%; } }
 
 @media (min-width: 768px) {
-  .span-cols2.last {
+  .span2.last {
     width: 14.8936170213%;
     float: left;
     margin-right: 0; } }
 
 @media (min-width: 768px) {
-  .span-cols3 {
+  .span3 {
     width: 23.4042553191%;
     float: left;
     margin-right: 2.1276595745%; } }
 
 @media (min-width: 768px) {
-  .span-cols3.last {
+  .span3.last {
     width: 23.4042553191%;
     float: left;
     margin-right: 0; } }
 
 @media (min-width: 768px) {
-  .span-cols4 {
+  .span4 {
     width: 31.914893617%;
     float: left;
     margin-right: 2.1276595745%; } }
 
 @media (min-width: 768px) {
-  .span-cols4.last {
+  .span4.last {
     width: 31.914893617%;
     float: left;
     margin-right: 0; } }
 
 @media (min-width: 768px) {
-  .span-cols5 {
+  .span5 {
     width: 40.4255319149%;
     float: left;
     margin-right: 2.1276595745%; } }
 
 @media (min-width: 768px) {
-  .span-cols5.last {
+  .span5.last {
     width: 40.4255319149%;
     float: left;
     margin-right: 0; } }
 
 @media (min-width: 768px) {
-  .span-cols6 {
+  .span6 {
     width: 48.9361702128%;
     float: left;
     margin-right: 2.1276595745%; } }
 
 @media (min-width: 768px) {
-  .span-cols6.last {
+  .span6.last {
     width: 48.9361702128%;
     float: left;
     margin-right: 0; } }
 
 @media (min-width: 768px) {
-  .span-cols7 {
+  .span7 {
     width: 57.4468085106%;
     float: left;
     margin-right: 2.1276595745%; } }
 
 @media (min-width: 768px) {
-  .span-cols7.last {
+  .span7.last {
     width: 57.4468085106%;
     float: left;
     margin-right: 0; } }
 
 @media (min-width: 768px) {
-  .span-cols8 {
+  .span8 {
     width: 65.9574468085%;
     float: left;
     margin-right: 2.1276595745%; } }
 
 @media (min-width: 768px) {
-  .span-cols8.last {
+  .span8.last {
     width: 65.9574468085%;
     float: left;
     margin-right: 0; } }
 
 @media (min-width: 768px) {
-  .span-cols9 {
+  .span9 {
     width: 74.4680851064%;
     float: left;
     margin-right: 2.1276595745%; } }
 
 @media (min-width: 768px) {
-  .span-cols9.last {
+  .span9.last {
     width: 74.4680851064%;
     float: left;
     margin-right: 0; } }
 
 @media (min-width: 768px) {
-  .span-cols10 {
+  .span10 {
     width: 82.9787234043%;
     float: left;
     margin-right: 2.1276595745%; } }
 
 @media (min-width: 768px) {
-  .span-cols10.last {
+  .span10.last {
     width: 82.9787234043%;
     float: left;
     margin-right: 0; } }
 
 @media (min-width: 768px) {
-  .span-cols11 {
+  .span11 {
     width: 91.4893617021%;
     float: left;
     margin-right: 2.1276595745%; } }
 
 @media (min-width: 768px) {
-  .span-cols11.last {
+  .span11.last {
     width: 91.4893617021%;
     float: left;
     margin-right: 0; } }
 
 @media (min-width: 768px) {
-  .span-cols12 {
+  .span12 {
     width: 100%;
     float: left;
     margin-left: 0;
     margin-right: 0; } }
 
 @media (min-width: 768px) {
-  .span-cols12.last {
+  .span12.last {
     width: 100%;
     float: left;
     margin-right: 0; } }
@@ -494,7 +449,8 @@ body {
     clear: both; }
 
 a {
-  color: #fff; }
+  color: #fff;
+  transition: none; }
 
 .site {
   width: auto; }
@@ -514,14 +470,13 @@ a {
       .sidebar-toggled #sidebar {
         width: 300px; } }
   #sidebar .main-navigation {
-    font-size: inherit;
-    font-weight: normal;
+    font-family: "Lobster Two", cursive;
     margin: 0 0 30px;
     padding: 0;
     text-align: left;
     text-shadow: 0 0 0; }
     #sidebar .main-navigation li {
-      font-size: 1.6em;
+      font-size: 16px;
       margin: 0 0 20px; }
       #sidebar .main-navigation li:last-child {
         margin-bottom: 0; }
@@ -548,13 +503,13 @@ a {
   #sidebar .sidebar-toggle {
     color: #fff;
     display: block;
-    font-size: 2.6em; }
+    font-size: 26px; }
 
 .sidebar-toggle {
   animation: none;
   color: #fff;
   display: block;
-  font-size: 2.6em;
+  font-size: 26px;
   right: 20px;
   top: 5px;
   transform: none; }
@@ -564,6 +519,7 @@ a {
       top: 20px; } }
   .sidebar-toggled .sidebar-toggle,
   .sidebar-toggle .sidebar-toggled.admin-bar {
+    display: none;
     position: absolute;
     top: 5px !important;
     transform: none !important; }
@@ -574,7 +530,7 @@ a {
 
 .social li {
   display: inline-block;
-  font-size: 2em;
+  font-size: 20px;
   margin: 0 10px; }
   .social li:last-child {
     margin-right: 0; }
@@ -616,7 +572,8 @@ a {
       display: block; }
 
 .site-branding {
-  animation: none; }
+  animation: none;
+  padding: 0; }
   @media (min-width: 768px) {
     .site-branding {
       width: 14.8936170213%;
@@ -629,7 +586,7 @@ a {
     max-height: 40px; }
     @media (min-width: 768px) {
       .site-branding .site-title img {
-        max-height: 60px; } }
+        max-height: 80px; } }
 
 .site-header-image {
   display: none; }
@@ -639,6 +596,29 @@ a {
   font-size: 13px; }
 
 .align-center {
+  text-align: center; }
+
+#sidenav {
+  display: none; }
+  #sidenav ul {
+    font-size: 16px;
+    text-transform: uppercase; }
+    #sidenav ul li {
+      margin: 0 0 10px; }
+      #sidenav ul li:last-child {
+        margin-bottom: 0; }
+      #sidenav ul li a {
+        text-decoration: none; }
+        #sidenav ul li a:hover {
+          color: #f96b00; }
+
+#primary {
+  position: relative; }
+
+h1 {
+  font-family: "Lobster Two", cursive;
+  font-size: 32px;
+  margin: 0 0 20px;
   text-align: center; }
 
 #content h1,
@@ -656,6 +636,7 @@ a {
 #content .site-main h1 {
   font-family: "Lobster Two", cursive;
   font-size: 32px;
+  margin: 0 0 20px;
   text-align: center; }
 
 #content .menu {
@@ -737,12 +718,17 @@ a {
 
 #reveal-modal-id {
   background: #ae0808;
+  color: #fff;
   height: 100%;
   left: 0;
   margin: 0;
-  padding: 20px;
+  padding: 40px 20px;
+  top: 0;
   width: 100%;
   z-index: 9999; }
+  #reveal-modal-id h1 {
+    color: #fff;
+    margin: 0 0 50px; }
   .admin-bar #reveal-modal-id {
     top: 48px; }
     @media (min-width: 768px) {
@@ -756,6 +742,67 @@ a {
   #reveal-modal-id .next-post-reveal-nav,
   #reveal-modal-id .prev-post-reveal-nav {
     display: none; }
+  #reveal-modal-id .locations {
+    display: block;
+    margin: -20px; }
+
+.button {
+  border: 1px solid #f96b00;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Lobster Two", cursive;
+  font-size: 18px;
+  padding: 8px 25px;
+  text-decoration: none; }
+
+.locations {
+  display: none; }
+
+.location {
+  border-bottom: 1px solid #d78484;
+  font-size: 16px; }
+  .location:last-child {
+    border: 0; }
+  .location__top {
+    padding: 30px 0; }
+  .location .col-a {
+    text-align: right; }
+  .location .button {
+    color: #fff;
+    margin: 15px 0 0; }
+  .location .services {
+    background: #fff;
+    max-height: 0;
+    overflow: hidden;
+    text-align: center;
+    transition: all .3s ease-out; }
+    .location .services__content {
+      display: inline-block; }
+    .location .services h6 {
+      color: #000;
+      display: inline-block;
+      font-family: "Lobster Two", cursive;
+      font-size: 16px;
+      margin: 40px 10px 0 0;
+      text-transform: none; }
+    .location .services ul {
+      display: inline-block;
+      height: 99px;
+      vertical-align: top; }
+      .location .services ul li {
+        display: inline-block; }
+      .location .services ul img {
+        display: block; }
+      .location .services ul a {
+        display: block;
+        height: 99px;
+        width: 140px; }
+        .location .services ul a:hover {
+          background: #f7e6e6; }
+  .location.open .services {
+    max-height: 200px; }
 
 @keyframes zoom {
   0% {
@@ -779,3 +826,22 @@ a {
   .home .site-branding .site-title img {
     margin: 0 auto;
     max-height: none; }
+
+.page-menu #sidenav {
+  display: block; }
+  @media (min-width: 768px) {
+    .page-menu #sidenav {
+      width: 31.914893617%;
+      float: left;
+      margin-right: 2.1276595745%;
+      padding-top: 30px; } }
+
+@media (min-width: 768px) {
+  .page-menu #primary {
+    width: 65.9574468085%;
+    float: left;
+    margin-right: 0;
+    margin-top: -60px; } }
+
+.page-locations .locations {
+  display: block; }

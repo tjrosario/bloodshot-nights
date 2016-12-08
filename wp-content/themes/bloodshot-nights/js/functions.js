@@ -5,6 +5,7 @@
 	var $masthead = $('#masthead');
 	var $hero = $('.hero');
 	var isHome = $body.hasClass('home');
+	var $modal = $('#reveal-modal-id');
 
 	$win.on('load resize', function() {
 		if ($win.width() < $breakpointTablet) {
@@ -42,6 +43,35 @@
 	    wordArray.pop();
 	    $(this).html(wordArray.join(" "));
 	  }
+	});
+
+	$body.on('click', '.locations .location', function(e) {
+		e.preventDefault();
+		var $this = $(this);
+		if ($this.hasClass('open')) {
+			$this.removeClass('open');
+		} else {
+			$this.addClass('open');
+		}
+	});
+
+	$body.on('click', '.locations .location .services a', function(e) {
+		e.stopPropagation();
+	});
+
+	$('.header-navigation .menu-header-container ul li a').on('click',function(e) {
+		var title = $(this).text().toLowerCase();
+		
+
+		if (title === 'locations') {
+			var $locations = $('#locations').clone();
+			var interval = setInterval(function() {
+				if ($modal.hasClass('open')) {
+					$modal.append($locations);
+					clearInterval(interval);
+				}
+			}, 100);
+		}
 	});
 
 // Add a class to big image and caption >= 1088px.

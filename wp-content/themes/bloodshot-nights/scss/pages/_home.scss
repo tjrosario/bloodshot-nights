@@ -6,10 +6,12 @@
 
 .page-homepage,
 .home {
-  h1 {
-    @extend %hidden;
+  #primary {
+    h1 {
+      @extend %hidden;
+    }
   }
-
+  
   #masthead {
     .header-navigation {
       display: block;
