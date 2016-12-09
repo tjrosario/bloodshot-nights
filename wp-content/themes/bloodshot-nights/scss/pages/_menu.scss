@@ -4,7 +4,6 @@
     
     @include susy-breakpoint($tablet, $susy) {
       @include span(4);
-      padding-top: 30px;
     }
   }
 

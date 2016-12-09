@@ -451,6 +451,8 @@ body {
 a {
   color: #fff;
   transition: none; }
+  a:focus, a:active {
+    outline: none; }
 
 .site {
   width: auto; }
@@ -599,27 +601,59 @@ a {
   text-align: center; }
 
 #sidenav {
-  display: none; }
+  display: none;
+  margin-bottom: 40px;
+  position: relative;
+  text-align: center; }
+  @media (min-width: 768px) {
+    #sidenav {
+      margin-bottom: 0;
+      text-align: left; } }
+  #sidenav .content {
+    padding-top: 30px; }
   #sidenav ul {
+    display: none;
     font-size: 16px;
+    margin: 0 0 70px;
     text-transform: uppercase; }
+    @media (min-width: 768px) {
+      #sidenav ul {
+        display: block; } }
     #sidenav ul li {
       margin: 0 0 10px; }
       #sidenav ul li:last-child {
         margin-bottom: 0; }
       #sidenav ul li a {
+        color: #fff;
         text-decoration: none; }
-        #sidenav ul li a:hover {
-          color: #f96b00; }
+        #sidenav ul li a.active, #sidenav ul li a:focus, #sidenav ul li a:active, #sidenav ul li a:hover {
+          color: #f96b00;
+          outline: none; }
+  #sidenav select {
+    background: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 0 20px;
+    padding: 5px; }
+    @media (min-width: 768px) {
+      #sidenav select {
+        display: none; } }
+  @media (min-width: 768px) {
+    #sidenav .button {
+      font-size: 25px;
+      padding: 8px 35px; } }
 
 #primary {
   position: relative; }
 
 h1 {
   font-family: "Lobster Two", cursive;
-  font-size: 32px;
+  font-size: 22.4px;
   margin: 0 0 20px;
   text-align: center; }
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 32px; } }
 
 #content h1,
 #content h2,
@@ -635,9 +669,12 @@ h1 {
 
 #content .site-main h1 {
   font-family: "Lobster Two", cursive;
-  font-size: 32px;
+  font-size: 25px;
   margin: 0 0 20px;
   text-align: center; }
+  @media (min-width: 768px) {
+    #content .site-main h1 {
+      font-size: 32px; } }
 
 #content .menu {
   background: #fff;
@@ -655,15 +692,26 @@ h1 {
     padding: 0 0 10px; }
   #content .menu__category {
     color: #ae0808;
-    font-size: 24px;
+    font-size: 16.8px;
+    line-height: 1.2;
     margin: 0 0 3px;
     position: relative; }
+    @media (min-width: 768px) {
+      #content .menu__category {
+        font-size: 24px; } }
   #content .menu__price {
-    bottom: 0;
     color: #ae0808;
-    font-size: 24px;
-    position: absolute;
-    right: 0; }
+    display: block;
+    font-size: 16.8px;
+    margin: 3px 0 0; }
+    @media (min-width: 768px) {
+      #content .menu__price {
+        bottom: 0;
+        display: inline;
+        font-size: 24px;
+        margin: 0;
+        position: absolute;
+        right: 0; } }
   #content .menu__subtext {
     color: #ae0808;
     font-size: 18px; }
@@ -679,11 +727,13 @@ h1 {
     position: relative; }
   #content .menu__item-name {
     color: #ae0808;
+    line-height: 1.2;
     margin: 0 0 2px; }
-  #content .menu__item-prices {
-    position: absolute;
-    right: 0;
-    top: -4px; }
+  @media (min-width: 768px) {
+    #content .menu__item-prices {
+      position: absolute;
+      right: 0;
+      top: -4px; } }
   #content .menu__item-price {
     color: #ae0808; }
   #content .menu__item-subtext {
@@ -694,6 +744,7 @@ h1 {
   #content .menu__item-subitem {
     margin: 0 0 10px; }
   #content .menu__subitem-name {
+    line-height: 1.2;
     margin: 0; }
   #content .menu__subitem-subtext {
     color: #000;
@@ -736,9 +787,14 @@ h1 {
         top: 32px; } }
   #reveal-modal-id .close-reveal-modal {
     color: #fff;
-    font-size: 120px;
-    right: 20px;
-    top: -20px; }
+    font-size: 65px;
+    right: 10px;
+    top: 0; }
+    @media (min-width: 768px) {
+      #reveal-modal-id .close-reveal-modal {
+        font-size: 120px;
+        right: 20px;
+        top: -20px; } }
   #reveal-modal-id .next-post-reveal-nav,
   #reveal-modal-id .prev-post-reveal-nav {
     display: none; }
@@ -756,22 +812,40 @@ h1 {
   font-size: 18px;
   padding: 8px 25px;
   text-decoration: none; }
+  .button:hover {
+    color: #f96b00; }
 
 .locations {
   display: none; }
 
 .location {
   border-bottom: 1px solid #d78484;
-  font-size: 16px; }
+  font-size: 16px;
+  text-align: center; }
+  @media (min-width: 768px) {
+    .location {
+      text-align: left; } }
   .location:last-child {
     border: 0; }
   .location__top {
     padding: 30px 0; }
   .location .col-a {
-    text-align: right; }
+    padding: 0 20px; }
+    @media (min-width: 768px) {
+      .location .col-a {
+        padding-right: 0;
+        text-align: right; } }
+  .location .col-b {
+    padding: 0 20px; }
+    @media (min-width: 768px) {
+      .location .col-b {
+        padding-left: 0; } }
   .location .button {
     color: #fff;
-    margin: 15px 0 0; }
+    margin: 0 0 20px; }
+    @media (min-width: 768px) {
+      .location .button {
+        margin: 15px 0 0; } }
   .location .services {
     background: #fff;
     max-height: 0;
@@ -782,23 +856,32 @@ h1 {
       display: inline-block; }
     .location .services h6 {
       color: #000;
-      display: inline-block;
       font-family: "Lobster Two", cursive;
       font-size: 16px;
-      margin: 40px 10px 0 0;
+      margin: 10px 0;
       text-transform: none; }
+      @media (min-width: 768px) {
+        .location .services h6 {
+          display: inline-block;
+          margin: 40px 10px 0 0; } }
     .location .services ul {
       display: inline-block;
-      height: 99px;
       vertical-align: top; }
+      @media (min-width: 768px) {
+        .location .services ul {
+          height: 99px; } }
       .location .services ul li {
         display: inline-block; }
       .location .services ul img {
         display: block; }
       .location .services ul a {
         display: block;
-        height: 99px;
-        width: 140px; }
+        height: 59px;
+        width: 75px; }
+        @media (min-width: 768px) {
+          .location .services ul a {
+            height: 99px;
+            width: 140px; } }
         .location .services ul a:hover {
           background: #f7e6e6; }
   .location.open .services {
@@ -833,8 +916,7 @@ h1 {
     .page-menu #sidenav {
       width: 31.914893617%;
       float: left;
-      margin-right: 2.1276595745%;
-      padding-top: 30px; } }
+      margin-right: 2.1276595745%; } }
 
 @media (min-width: 768px) {
   .page-menu #primary {

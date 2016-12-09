@@ -34,6 +34,11 @@ img {
 a {
   color: $white;
   transition: none;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
 }
 
 .site {
@@ -279,12 +284,30 @@ a {
 
 #sidenav {
   display: none;
+  margin-bottom: 40px;
+  position: relative;
+  text-align: center;
+
+  @include susy-breakpoint($tablet, $susy) {
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  .content {
+    padding-top: 30px;
+  }
 
   ul {
     @extend %reset;
     @extend %font-bold;
+    display: none;
     font-size: 16px;
+    margin: 0 0 70px;
     text-transform: uppercase;
+
+    @include susy-breakpoint($tablet, $susy) {
+      display: block;
+    }
 
     li {
       margin: 0 0 10px;
@@ -294,12 +317,36 @@ a {
       }
 
       a {
+        color: $white;
         text-decoration: none;
 
+        &.active,
+        &:focus,
+        &:active,
         &:hover {
           color: $blaze-orange;
+          outline: none;
         }
       }
+    }
+  }
+
+  select {
+    background: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 0 20px;
+    padding: 5px;
+
+    @include susy-breakpoint($tablet, $susy) {
+      display: none;
+    }
+  }
+
+  .button {
+    @include susy-breakpoint($tablet, $susy) {
+      font-size: 25px;
+      padding: 8px 35px;
     }
   }
 }
@@ -311,9 +358,13 @@ a {
 h1 {
   @extend %font-bold-italic;
   font-family: $font-lobster;
-  font-size: 32px;
+  font-size: 32px * $mobile-conversion;
   margin: 0 0 $gutter-width;
   text-align: center;
+
+  @include susy-breakpoint($tablet, $susy) {
+    font-size: 32px;
+  }
 }
 
 #content {
@@ -335,9 +386,13 @@ h1 {
     h1 {
       @extend %font-bold-italic;
       font-family: $font-lobster;
-      font-size: 32px;
+      font-size: 25px;
       margin: 0 0 $gutter-width;
       text-align: center;
+
+      @include susy-breakpoint($tablet, $susy) {
+        font-size: 32px;
+      }
     }
   }
 
@@ -364,17 +419,30 @@ h1 {
 
     &__category {
       color: $milano-red;
-      font-size: 24px;
+      font-size: 24px * $mobile-conversion;
+      line-height: 1.2;
       margin: 0 0 3px;
       position: relative;
+
+      @include susy-breakpoint($tablet, $susy) {
+        font-size: 24px;
+      }
     }
 
     &__price {
-      bottom: 0;
       color: $milano-red;
-      font-size: 24px;
-      position: absolute;
-      right: 0;
+      display: block;
+      font-size: 24px * $mobile-conversion;
+      margin: 3px 0 0;
+
+      @include susy-breakpoint($tablet, $susy) {
+        bottom: 0;
+        display: inline;
+        font-size: 24px;
+        margin: 0;
+        position: absolute;
+        right: 0; 
+      }
     }
 
     &__subtext {
@@ -406,13 +474,16 @@ h1 {
 
     &__item-name {
       color: $milano-red;
+      line-height: 1.2;
       margin: 0 0 2px;
     }
 
     &__item-prices {
-      position: absolute;
-      right: 0;
-      top: -4px;
+      @include susy-breakpoint($tablet, $susy) {
+        position: absolute;
+        right: 0;
+        top: -4px;
+      }
     }
 
     &__item-price {
@@ -434,6 +505,7 @@ h1 {
     }
 
     &__subitem-name {
+      line-height: 1.2;
       margin: 0;
     }
 
@@ -496,9 +568,15 @@ h1 {
   .close-reveal-modal {
     @extend %font-regular;
     color: $white;
-    font-size: 120px;
-    right: 20px;
-    top: -20px;
+    font-size: 65px;
+    right: 10px;
+    top: 0;
+
+    @include susy-breakpoint($tablet, $susy) {
+      font-size: 120px;
+      right: 20px;
+      top: -20px;
+    }
   }
 
   .next-post-reveal-nav,
@@ -523,6 +601,10 @@ h1 {
   font-size: 18px;
   padding: 8px 25px;
   text-decoration: none;
+
+  &:hover {
+    color: $blaze-orange;
+  }
 }
 
 .locations {
@@ -533,6 +615,11 @@ h1 {
   @extend %clearfix;
   border-bottom: 1px solid $new-york-pink;
   font-size: 16px;
+  text-align: center;
+
+  @include susy-breakpoint($tablet, $susy) {
+    text-align: left;
+  }
 
   &:last-child {
     border: 0;
@@ -543,12 +630,29 @@ h1 {
   }
 
   .col-a {
-    text-align: right;
+    padding: 0 $gutter-width;
+
+    @include susy-breakpoint($tablet, $susy) {
+      padding-right: 0;
+      text-align: right;
+    }
+  }
+
+  .col-b {
+    padding: 0 $gutter-width;
+
+    @include susy-breakpoint($tablet, $susy) {
+      padding-left: 0;
+    }
   }
 
   .button {
     color: $white;
-    margin: 15px 0 0;
+    margin: 0 0 $gutter-width;
+
+    @include susy-breakpoint($tablet, $susy) {
+      margin: 15px 0 0;
+    }
   }
 
   .services {
@@ -566,18 +670,25 @@ h1 {
     h6 {
       @extend %font-regular-italic;
       color: $black;
-      display: inline-block;
       font-family: $font-lobster;
       font-size: 16px;
-      margin: 40px 10px 0 0;
+      margin: 10px 0;
       text-transform: none;
+
+      @include susy-breakpoint($tablet, $susy) {
+        display: inline-block;
+        margin: 40px 10px 0 0;
+      }
     }
 
     ul {
       @extend %reset;
       display: inline-block;
-      height: 99px;
       vertical-align: top;
+
+      @include susy-breakpoint($tablet, $susy) {
+        height: 99px;
+      }
 
       li {
         display: inline-block;
@@ -589,8 +700,13 @@ h1 {
 
       a {
         display: block;
-        height: 99px;
-        width: 140px;
+        height: 59px;
+        width: 75px;
+
+        @include susy-breakpoint($tablet, $susy) {
+          height: 99px;
+          width: 140px;
+        }
 
         &:hover {
           background: $pot-pourri;

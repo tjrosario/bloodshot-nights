@@ -6,6 +6,7 @@
 	var $hero = $('.hero');
 	var isHome = $body.hasClass('home');
 	var $modal = $('#reveal-modal-id');
+	var $sidenav = $('#sidenav');
 
 	$win.on('load resize', function() {
 		if ($win.width() < $breakpointTablet) {
@@ -15,18 +16,44 @@
 		}
 	});
 
-	$win.on('load scroll', function() {
+	$win.on('load scroll resize', function() {
+		if ($win.width() < 768) {
+			$sidenav.find('.content').css('margin-top', 0);
+			return;
+		}
+
 		var scrollTop = $win.scrollTop();
-		if (scrollTop > $hero.outerHeight(true)) {
-			if (isHome) {
-				if (!$body.hasClass('sticky-nav')) {
-					$body.addClass('sticky-nav');
-				}
-			}
+		if (scrollTop > $masthead.outerHeight(true)) {
+			$sidenav.find('.content').css('margin-top', scrollTop - $masthead.outerHeight(true));
+			$body.addClass('sticky-nav');
 		} else {
 			$body.removeClass('sticky-nav');
+			$sidenav.find('.content').css('margin-top', 0);
 		}
 	});
+
+	$sidenav.find('a').on('click', function(e) {
+		e.preventDefault();
+		$sidenav.find('a').removeClass('active');
+		$(this).addClass('active');
+		var $content = $($(this).attr('href'));
+		scrollToMenu($content);
+	});
+
+	$sidenav.find('select').val(0);
+	$sidenav.find('select').on('change', function(e) {
+		var val = $(this).val();
+		if (val !== 0) {
+			var $content = $($(this).val());
+			scrollToMenu($content);
+		}
+	});
+
+	function scrollToMenu($content) {
+		$('html,body').animate({
+			scrollTop: $content.offset().top - $('#wpadminbar').outerHeight(true)
+		}, 500);
+	}
 
 	$('.hero__content .cta').on('click', function(e) {
 		e.preventDefault();
@@ -59,7 +86,7 @@
 		e.stopPropagation();
 	});
 
-	$('.header-navigation .menu-header-container ul li a').on('click',function(e) {
+	$('.header-navigation .menu-header-container ul li a, #sidebar .main-navigation a').on('click',function(e) {
 		var title = $(this).text().toLowerCase();
 		
 

@@ -20,17 +20,34 @@ get_header(); ?>
 
 <div class="content-area">
   <div id="sidenav">
-  	<ul>
-    <?php
-      foreach ($menu_data as $menu):
-    ?>
-  	
-  	<?php if (strlen($menu['menu_title']) > 0) { ?>
-  		<li><a href="#"><?=$menu['menu_title'];?></a></li>
-  	<?php } ?>
-  	
-  	<?php endforeach; ?>
-  	</ul>
+    <div class="content">
+    	<ul>
+      <?php
+        foreach ($menu_data as $menu):
+          $slug = preg_replace('#[ -]+#', '-', $menu['menu_title']);
+          $slug = strtolower($slug);
+      ?>
+    	
+    	<?php if (strlen($menu['menu_title']) > 0) { ?>
+    		<li><a href="#<?=$slug?>"><?=$menu['menu_title'];?></a></li>
+    	<?php } ?>
+    	
+    	<?php endforeach; ?>
+    	</ul>
+
+      <select>
+        <option value="0">Select a Category</option>
+        <?php
+          foreach ($menu_data as $menu):
+            $slug = preg_replace('#[ -]+#', '-', $menu['menu_title']);
+            $slug = strtolower($slug);
+        ?>
+        <option value="#<?=$slug?>"><?=$menu['menu_title'];?></option>
+        <?php endforeach; ?>
+      </select>
+
+      <a class="button">Order Now</a>
+    </div>
   </div>
 
 	<div id="primary" style="background-image: url(<?=$page_bg ?>);">
@@ -91,9 +108,11 @@ get_header(); ?>
 					<div class="masonry-layout">
         <?php
           foreach ($menu_data as $menu):
+            $slug = preg_replace('#[ -]+#', '-', $menu['menu_title']);
+            $slug = strtolower($slug);
         ?>	
       		<?php if (strlen($menu['menu_title']) > 0) { ?>
-      		<div class="menu masonry-layout__panel <?=$menu['menu_width'] ?> <?=$menu['menu_alignment'] ?> <?=$menu['menu_break_after'][0] ?>" style="top:<?=$menu['menu_coordinate_y'] ?>px; margin-left:<?=$menu['menu_coordinate_x'];?>px;">
+      		<div class="menu masonry-layout__panel <?=$menu['menu_width'] ?> <?=$menu['menu_alignment'] ?> <?=$menu['menu_break_after'][0] ?>" style="top:<?=$menu['menu_coordinate_y'] ?>px; margin-left:<?=$menu['menu_coordinate_x'];?>px;" id="<?=$slug?>">
             <header class="menu__header <?=$menu['menu_title_alignment'] ?>">
               <h3 class="menu__category" style="color:<?=$menu['menu_title_color'] ?>; font-family:<?=$menu['menu_title_font'] ?>">
               	<?=$menu['menu_title'];?> 
